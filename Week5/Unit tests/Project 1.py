@@ -14,6 +14,8 @@ import csv
 import os
 from time import time, sleep
 import resource
+
+
 def create_csv(filename):
 
     headerList = ['CPU', 'RSS[Gb]', 'VMS[Gb]']
