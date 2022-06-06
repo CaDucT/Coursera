@@ -20,12 +20,12 @@ def open_files(file):
 
 
     with open('error_messages.csv', 'w', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',')
-        spamwriter.writerow(["Error", "Count"])
+        write = csv.writer(csvfile, delimiter=',')
+        write.writerow(["Error", "Count"])
         for log in sorted_errors:
             key, value = log
-            spamwriter = csv.writer(csvfile, delimiter=',')
-            spamwriter.writerow([key, value])
+            write = csv.writer(csvfile, delimiter=',')
+            write.writerow([key, value])
 
     with open(file, 'r') as f:
         for line in f:
