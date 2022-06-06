@@ -17,7 +17,7 @@ def open_files(file):
                 else:
                     error[errorname[1]] += 1
         sorted_errors = sorted(error.items(), key=operator.itemgetter(1), reverse=True)
-        print(sorted_errors)
+
 
     with open('error_messages.csv', 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',')
@@ -41,14 +41,14 @@ def open_files(file):
             elif err_pat[1] == 'ERROR':
                 per_user[usr_pat[1]]['ERROR'] += 1
         sorted_users = sorted(per_user.items())
-        print(sorted_users)
+
 
     f = open('user_statistics.csv', 'w', newline='')
     write = csv.writer(f, delimiter=',')
     write.writerow(['Username', 'INFO', 'ERROR'])
     for stats in sorted_users:
         a, b = stats
-        f.write(str(a) + ',' + str(b["INFO"]) + ',' + str(b["ERROR"]) + '\n')
+        f.write(str(a) + ',' + str(b['INFO']) + ',' + str(b["ERROR"]) + '\n')
     f.close()
 
 
